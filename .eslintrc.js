@@ -21,6 +21,7 @@ module.exports = {
 	rules: {
 		// semi: [2, "never"],
 		// 'no-console': 'error',
+		"no-unused-vars": 1,
 		"react/forbid-prop-types": 0,
 		"react/require-default-props": 0,
 		"react/jsx-filename-extension": 0,
