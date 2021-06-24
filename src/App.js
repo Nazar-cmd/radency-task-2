@@ -1,7 +1,9 @@
+import Btn from "components/Btn";
+
 function App() {
 	return (
 		<div className="App">
-			<span>asd</span>
+			<Btn />
 		</div>
 	);
 }

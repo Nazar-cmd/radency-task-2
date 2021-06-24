@@ -9,9 +9,14 @@ module.exports = {
 		},
 		"import/resolver": {
 			node: {
-				moduleDirectory: ["node_modules", "/"]
+				moduleDirectory: ["node_modules", "/"],
+				paths: ["src"]
 			}
 		}
+	},
+	env: {
+		browser: true,
+		node: true
 	},
 	rules: {
 		// semi: [2, "never"],
@@ -23,9 +28,12 @@ module.exports = {
 		"no-return-await": 2,
 		"react-hooks/rules-of-hooks": "error",
 		"react-hooks/exhaustive-deps": "warn",
+		"react/jsx-uses-react": "off",
+		"react/react-in-jsx-scope": "off",
 		"prettier/prettier": [
 			"error",
 			{
+				noUndef: false,
 				singleQuote: false,
 				trailingComma: "none",
 				semi: true,
