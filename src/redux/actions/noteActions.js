@@ -7,6 +7,17 @@ import {
 	ARCHIVE_ALL_NOTES
 } from "./types";
 
+/* function getCurrentDate() {
+	const today = new Date();
+	const day = String(today.getDate()).padStart(2, "0");
+	const month = today.toLocaleString("default", { month: "long" });
+	const year = today.getFullYear();
+
+	return `${month} ${day}, ${year}`;
+}
+newNote.created = getCurrentDate();
+newNote.archived = false; */
+
 const createNote = (note) => (dispatch) => {
 	dispatch({
 		type: CREATE_NOTE,
@@ -21,10 +32,10 @@ const updateNote = (note, id) => (dispatch) => {
 	});
 };
 
-const deleteNote = (note, id) => (dispatch) => {
+const deleteNote = (id) => (dispatch) => {
 	dispatch({
 		type: DELETE_NOTE,
-		payload: { note, id }
+		payload: { id }
 	});
 };
 
