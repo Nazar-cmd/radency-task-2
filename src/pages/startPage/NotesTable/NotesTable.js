@@ -1,19 +1,27 @@
+import { useSelector } from "react-redux";
+
 import { Table } from "components";
 import NotesTableHeader from "./NotesTableHeader";
 import NotesTableRow from "./NotesTableRow";
 
-const NotesTable = () => (
-	// console.log("123");
+const NotesTable = () => {
+	const { notes } = useSelector((state) => state.notes);
 
-	<Table>
-		<NotesTableHeader />
-		<NotesTableRow
-			name="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, earum!"
-			category="Idea"
-			created="123"
-			content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, earum!"
-			archived={false}
-		/>
-	</Table>
-);
+	return (
+		<Table>
+			<NotesTableHeader />
+			{notes.map(({ name, category, created, content, archived }, index) => (
+				<NotesTableRow
+					key={index}
+					name={name}
+					category={category}
+					created={created}
+					content={content}
+					archived={archived}
+					index={index}
+				/>
+			))}
+		</Table>
+	);
+};
 export default NotesTable;

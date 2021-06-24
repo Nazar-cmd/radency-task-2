@@ -1,3 +1,4 @@
+import initialState from "./initialStateNotes";
 import {
 	ARCHIVE_ALL_NOTES,
 	DELETE_ALL_NOTES,
@@ -6,10 +7,6 @@ import {
 	UPDATE_NOTE,
 	ARCHIVE_NOTE
 } from "../actions/types";
-
-const initialState = {
-	notes: []
-};
 
 function noteReducers(state = initialState, action) {
 	switch (action.type) {

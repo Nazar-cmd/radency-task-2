@@ -18,47 +18,35 @@ import {
 newNote.created = getCurrentDate();
 newNote.archived = false; */
 
-const createNote = (note) => (dispatch) => {
-	dispatch({
-		type: CREATE_NOTE,
-		payload: { note }
-	});
-};
+const createNote = (note) => ({
+	type: CREATE_NOTE,
+	payload: { note }
+});
 
-const updateNote = (note, id) => (dispatch) => {
-	dispatch({
-		type: UPDATE_NOTE,
-		payload: { note, id }
-	});
-};
+const updateNote = (note, id) => ({
+	type: UPDATE_NOTE,
+	payload: { note, id }
+});
 
-const deleteNote = (id) => (dispatch) => {
-	dispatch({
-		type: DELETE_NOTE,
-		payload: { id }
-	});
-};
+const deleteNote = (id) => ({
+	type: DELETE_NOTE,
+	payload: { id }
+});
 
-const archiveNote = (note, id) => (dispatch) => {
-	dispatch({
-		type: ARCHIVE_NOTE,
-		payload: { note, id }
-	});
-};
+const archiveNote = (note, id) => ({
+	type: ARCHIVE_NOTE,
+	payload: { note, id }
+});
 
-const deleteAllNotes = () => (dispatch) => {
-	dispatch({
-		type: DELETE_ALL_NOTES,
-		payload: {}
-	});
-};
+const deleteAllNotes = () => ({
+	type: DELETE_ALL_NOTES,
+	payload: {}
+});
 
-const archiveAllNotes = () => (dispatch) => {
-	dispatch({
-		type: ARCHIVE_ALL_NOTES,
-		payload: {}
-	});
-};
+const archiveAllNotes = () => ({
+	type: ARCHIVE_ALL_NOTES,
+	payload: {}
+});
 
 export {
 	createNote,

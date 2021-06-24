@@ -3,7 +3,7 @@ import { getAllDatesFromContent, getCategoryIconPath } from "utils";
 import { TableCell } from "components";
 
 const NotesTableRow = (props) => {
-	const { name, category, created, content, archived } = props;
+	const { name, category, created, content, archived, index } = props;
 
 	const categoryIconPath = getCategoryIconPath(category);
 
@@ -71,7 +71,8 @@ NotesTableRow.propTypes = {
 	category: PropTypes.string.isRequired,
 	created: PropTypes.string.isRequired,
 	content: PropTypes.string.isRequired,
-	archived: PropTypes.bool.isRequired
+	archived: PropTypes.bool.isRequired,
+	index: PropTypes.number.isRequired
 };
 
 export default NotesTableRow;

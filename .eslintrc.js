@@ -25,6 +25,7 @@ module.exports = {
 		"react/forbid-prop-types": 0,
 		"react/require-default-props": 0,
 		"react/jsx-filename-extension": 0,
+		"react/no-array-index-key": 1,
 		// "import/no-named-as-default": 2,
 		// "import/named": 0,
 		"no-return-await": 2,
