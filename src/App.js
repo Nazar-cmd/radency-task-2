@@ -1,9 +1,9 @@
-import Btn from "components/Btn";
+import Main from "layout/Main";
 
 function App() {
 	return (
 		<div className="App">
-			<Btn />
+			<Main />
 		</div>
 	);
 }

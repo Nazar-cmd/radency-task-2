@@ -1,15 +1,16 @@
 @use "sass:list";
 
-@mixin full-height-page-background($html-background: $secondary_yellow){
+@mixin full-height-page-background($page-background: $secondary_yellow){
 
-  html {
+  html, body, #root, .App {
     min-height: 100vh;
   }
 
-  body {
-    background: $html-background;
-    min-height: 100vh;
-    //height: 100%;
+  .App {
+    display: flex;
+    flex-direction: column;
+    padding: $md_padding;
+    background: $page-background;
   }
 }
 
