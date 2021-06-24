@@ -1,11 +1,11 @@
 module.exports = {
-	extends: ["prettier"],
+	extends: ["airbnb", "prettier"],
 	root: true,
 	parser: "babel-eslint",
 	plugins: ["import", "babel", "react", "react-hooks", "prettier"],
 	settings: {
 		react: {
-			version: "16.9"
+			version: "17.0.2"
 		},
 		"import/resolver": {
 			node: {
@@ -14,7 +14,7 @@ module.exports = {
 		}
 	},
 	rules: {
-		//semi: [2, "never"],
+		// semi: [2, "never"],
 		// 'no-console': 'error',
 		"react/forbid-prop-types": 0,
 		"react/require-default-props": 0,
