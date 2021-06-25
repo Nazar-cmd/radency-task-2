@@ -12,7 +12,13 @@ function getCategoryIconPath(category) {
 }
 
 function getAllDatesFromContent(content) {
-	return content.match(dateRegex) || "";
+	const dates = content.match(dateRegex);
+
+	if (dates) {
+		return dates.join(", ");
+	}
+
+	return "";
 }
 
 export { getCategoryIconPath, getAllDatesFromContent };

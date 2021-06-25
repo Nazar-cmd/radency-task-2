@@ -1,4 +1,4 @@
-import { Table } from "components";
+import { Table, NoTableDataMessage } from "components";
 import { useMemo } from "react";
 import PropTypes from "prop-types";
 import NotesTableHeader from "./NotesTableHeader";
@@ -21,9 +21,12 @@ const NotesTable = ({ notes }) => {
 		[notes]
 	);
 
+	const noDataMessage = !notes.length && <NoTableDataMessage />;
+
 	return (
 		<Table>
 			<NotesTableHeader />
+			{noDataMessage}
 			{notesTableRows}
 		</Table>
 	);
