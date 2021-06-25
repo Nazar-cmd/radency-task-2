@@ -3,6 +3,7 @@
   height: $table-height;
   max-height: 100%;
   padding: $sm_padding-horizontally;
+  margin-bottom: $lg_margin;
 
   &__cell {
     min-width: $min_table-cell-size;
@@ -38,7 +39,7 @@
   }
 
   &__row {
-    position: relative;
+    //position: relative;
     display: flex;
     margin-top: $md_margin;
     min-width: 100%;
@@ -72,13 +73,10 @@
     }
   }
 
-  &__header_container {
+  &__header {
     position: sticky;
     top: 0;
     z-index: 1;
-  }
-
-  &__header {
     font-weight: bold;
     border-radius: $element_border-radius;
     margin-top: 0;
