@@ -46,6 +46,7 @@
     &.archived {
       .table__cell {
         background-color: $tertiary_gray;
+
       }
     }
 
@@ -54,6 +55,7 @@
 
       .table__cell {
         background-color: $secondary_yellow;
+        transition: background-color $md_transition-duration ease;
       }
 
       .table__cell_name {
