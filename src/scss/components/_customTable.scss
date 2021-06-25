@@ -2,8 +2,7 @@
   @extend %container-x-overflow;
   height: $table-height;
   max-height: 100%;
-  padding: $sm_padding-horizontally;
-  margin-bottom: $lg_margin;
+  padding: $md_padding;
 
   &__cell {
     min-width: $min_table-cell-size;
