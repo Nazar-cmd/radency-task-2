@@ -19,13 +19,14 @@ module.exports = {
 		node: true
 	},
 	rules: {
-		// semi: [2, "never"],
-		// 'no-console': 'error',
+		"no-console": 1,
 		"no-unused-vars": 1,
 		"react/forbid-prop-types": 0,
 		"react/require-default-props": 0,
 		"react/jsx-filename-extension": 0,
 		"react/no-array-index-key": 1,
+		"jsx-a11y/click-events-have-key-events": 1,
+		"jsx-a11y/no-noninteractive-element-interactions": 1,
 		// "import/no-named-as-default": 2,
 		// "import/named": 0,
 		"no-return-await": 2,

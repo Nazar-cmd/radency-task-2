@@ -23,19 +23,19 @@ const createNote = (note) => ({
 	payload: { note }
 });
 
-const updateNote = (note, id) => ({
+const updateNote = (note, index) => ({
 	type: UPDATE_NOTE,
-	payload: { note, id }
+	payload: { note, index }
 });
 
-const deleteNote = (id) => ({
+const deleteNote = (index) => ({
 	type: DELETE_NOTE,
-	payload: { id }
+	payload: { index }
 });
 
-const archiveNote = (note, id) => ({
+const archiveNote = (index) => ({
 	type: ARCHIVE_NOTE,
-	payload: { note, id }
+	payload: { index }
 });
 
 const deleteAllNotes = () => ({

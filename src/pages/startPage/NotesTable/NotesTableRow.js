@@ -1,15 +1,30 @@
 import PropTypes from "prop-types";
 import { getAllDatesFromContent, getCategoryIconPath } from "utils";
 import { TableCell } from "components";
+import { useCallback } from "react";
+import { archiveNote, deleteNote } from "redux/actions/noteActions";
+import { useDispatch } from "react-redux";
 
 const NotesTableRow = (props) => {
 	const { name, category, created, content, archived, index } = props;
+
+	const dates = getAllDatesFromContent(content);
 
 	const categoryIconPath = getCategoryIconPath(category);
 
 	const archivedClassName = archived ? "archived" : "";
 
-	const dates = getAllDatesFromContent(content);
+	const dispatch = useDispatch();
+
+	const onArchiveClick = useCallback(
+		() => dispatch(archiveNote(index)),
+		[dispatch, index]
+	);
+
+	const onDeleteClick = useCallback(
+		() => dispatch(deleteNote(index)),
+		[dispatch, index]
+	);
 
 	return (
 		<div className={`table__row_content table__row ${archivedClassName}`}>
@@ -54,11 +69,13 @@ const NotesTableRow = (props) => {
 						src="assets/icons/archive-solid.svg"
 						className="icon table__row_icon icon_archive"
 						alt="archive"
+						onClick={onArchiveClick}
 					/>
 					<img
 						src="assets/icons/trash-solid.svg"
 						className="icon table__row_icon icon_delete"
 						alt="delete"
+						onClick={onDeleteClick}
 					/>
 				</div>
 			</TableCell>
