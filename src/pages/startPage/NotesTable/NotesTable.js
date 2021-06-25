@@ -1,14 +1,11 @@
-import { useSelector } from "react-redux";
-
 import { Table } from "components";
 import { useMemo } from "react";
+import PropTypes from "prop-types";
 import NotesTableHeader from "./NotesTableHeader";
 import NotesTableRow from "./NotesTableRow";
 
-const NotesTable = () => {
-	const { notes } = useSelector((state) => state.notes);
-
-	const tableRows = useMemo(
+const NotesTable = ({ notes }) => {
+	const notesTableRows = useMemo(
 		() =>
 			notes.map(({ name, category, created, content, archived }, index) => (
 				<NotesTableRow
@@ -27,8 +24,21 @@ const NotesTable = () => {
 	return (
 		<Table>
 			<NotesTableHeader />
-			{tableRows}
+			{notesTableRows}
 		</Table>
 	);
 };
+
+NotesTable.propTypes = {
+	notes: PropTypes.arrayOf(
+		PropTypes.shape({
+			name: PropTypes.string.isRequired,
+			category: PropTypes.string.isRequired,
+			created: PropTypes.string.isRequired,
+			content: PropTypes.string.isRequired,
+			archived: PropTypes.bool.isRequired
+		})
+	)
+};
+
 export default NotesTable;
