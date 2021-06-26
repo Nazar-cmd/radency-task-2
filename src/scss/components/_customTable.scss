@@ -3,6 +3,7 @@
   height: $table-height;
   max-height: 100%;
   padding: $md_padding;
+  padding-top: 0;
 
   &__cell {
     min-width: $min_table-cell-size;

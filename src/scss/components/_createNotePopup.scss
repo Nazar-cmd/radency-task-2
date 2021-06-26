@@ -16,15 +16,28 @@
   padding: $md_padding;
   margin: $md_margin;
 
-
   &__container {
     @include show-element($to-show: true);
     @extend %center-container-elements;
     @extend %full-page-absolute-container;
     background: rgba(60, 60, 60, 0.4);
+    backdrop-filter: blur(1px);
+
+    transition: all 100ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 100ms;
 
     &.closed {
       @include show-element($to-show: false);
+
+      .note__popup {
+        @include popup-transitions(closed)
+      }
+    }
+
+    &.active {
+      .note__popup {
+        @include popup-transitions(active)
+      }
     }
   }
 

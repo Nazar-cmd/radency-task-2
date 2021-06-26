@@ -40,7 +40,7 @@ const NotePopup = ({ open, closePopup, submitPopup, initialValue }) => {
 		};
 	}, [open, closePopup]);
 
-	const stateClassName = active && open ? "" : "closed";
+	const stateClassName = active && open ? "active" : "closed";
 
 	return (
 		<>

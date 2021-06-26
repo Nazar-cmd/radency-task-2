@@ -1,4 +1,5 @@
 import { useMemo, useEffect } from "react";
+import PropTypes from "prop-types";
 import ReactDOM from "react-dom";
 
 const Portal = ({ children, parent, className }) => {
@@ -14,6 +15,12 @@ const Portal = ({ children, parent, className }) => {
 		};
 	}, [el, parent, className]);
 	return ReactDOM.createPortal(children, el);
+};
+
+Portal.propTypes = {
+	children: PropTypes.node.isRequired,
+	className: PropTypes.string,
+	parent: PropTypes.node
 };
 
 export default Portal;
