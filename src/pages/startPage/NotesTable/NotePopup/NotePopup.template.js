@@ -32,7 +32,7 @@ const NotePopupTemplate = ({ onClose, submitFunction, initialValue }) => {
 			<div className="note__popup__exit">
 				<img
 					className="note__popup__exit_icon"
-					src="../../../../icons/times-solid.svg"
+					src={require("../../../../icons/times-solid.svg").default}
 					alt="close"
 					onClick={onClose}
 				/>
