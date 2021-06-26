@@ -1,3 +1,4 @@
+https://github.com/nazar-cmd/radency-task-2/workflows/CI/CD/badge.svg
 # Radency task 2
 ## Notes app via React and Redux
 
