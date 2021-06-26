@@ -1,10 +1,13 @@
 import { Table, NoTableDataMessage, Button } from "components";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import PropTypes from "prop-types";
+import NotePopup from "components/NotePopup";
 import NotesTableHeader from "./NotesTableHeader";
 import NotesTableRow from "./NotesTableRow";
 
 const NotesTable = ({ notes }) => {
+	const [modalOpen, setModalOpen] = useState(false);
+
 	const notesTableRows = useMemo(
 		() =>
 			notes.map(({ name, category, created, content, archived }, index) => (
@@ -30,7 +33,8 @@ const NotesTable = ({ notes }) => {
 				{noDataMessage}
 				{notesTableRows}
 			</Table>
-			<Button text="Add note!" />
+			<Button text="Add note!" onClick={() => setModalOpen(true)} />
+			<NotePopup onClose={() => setModalOpen(false)} open={modalOpen} />
 		</div>
 	);
 };

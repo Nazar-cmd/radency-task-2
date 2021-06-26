@@ -27,6 +27,8 @@ module.exports = {
 		"react/no-array-index-key": 1,
 		"jsx-a11y/click-events-have-key-events": 1,
 		"jsx-a11y/no-noninteractive-element-interactions": 1,
+		"jsx-a11y/label-has-associated-control": 1,
+		"jsx-a11y/control-has-associated-label": 1,
 		// "import/no-named-as-default": 2,
 		// "import/named": 0,
 		"no-return-await": 2,
