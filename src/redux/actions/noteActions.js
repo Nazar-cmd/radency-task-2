@@ -7,17 +7,6 @@ import {
 	ARCHIVE_ALL_NOTES
 } from "./types";
 
-/* function getCurrentDate() {
-	const today = new Date();
-	const day = String(today.getDate()).padStart(2, "0");
-	const month = today.toLocaleString("default", { month: "long" });
-	const year = today.getFullYear();
-
-	return `${month} ${day}, ${year}`;
-}
-newNote.created = getCurrentDate();
-newNote.archived = false; */
-
 const createNote = (note) => ({
 	type: CREATE_NOTE,
 	payload: { note }

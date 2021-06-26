@@ -1,4 +1,4 @@
-import TablesWithNotes from "components/TablesWithNotes";
+import TablesWithNotes from "pages/startPage/TablesWithNotes";
 import NotesTable from "./NotesTable";
 import StatsTable from "./StatsTable";
 
