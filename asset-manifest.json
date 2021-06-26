@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/radency-task-2/static/css/main.b7133aad.chunk.css",
+    "main.js": "/radency-task-2/static/js/main.e0bd7f8b.chunk.js",
+    "main.js.map": "/radency-task-2/static/js/main.e0bd7f8b.chunk.js.map",
+    "runtime-main.js": "/radency-task-2/static/js/runtime-main.3b512823.js",
+    "runtime-main.js.map": "/radency-task-2/static/js/runtime-main.3b512823.js.map",
+    "static/js/2.3f6c7030.chunk.js": "/radency-task-2/static/js/2.3f6c7030.chunk.js",
+    "static/js/2.3f6c7030.chunk.js.map": "/radency-task-2/static/js/2.3f6c7030.chunk.js.map",
+    "index.html": "/radency-task-2/index.html",
+    "static/css/main.b7133aad.chunk.css.map": "/radency-task-2/static/css/main.b7133aad.chunk.css.map",
+    "static/js/2.3f6c7030.chunk.js.LICENSE.txt": "/radency-task-2/static/js/2.3f6c7030.chunk.js.LICENSE.txt",
+    "static/media/archive-solid.svg": "/radency-task-2/static/media/archive-solid.298c9f19.svg",
+    "static/media/head-side-virus-solid.svg": "/radency-task-2/static/media/head-side-virus-solid.a3eed105.svg",
+    "static/media/lightbulb-regular.svg": "/radency-task-2/static/media/lightbulb-regular.f46eecaa.svg",
+    "static/media/pen-solid.svg": "/radency-task-2/static/media/pen-solid.4b1bdc1c.svg",
+    "static/media/quote-right-solid.svg": "/radency-task-2/static/media/quote-right-solid.48f83192.svg",
+    "static/media/shopping-cart-solid.svg": "/radency-task-2/static/media/shopping-cart-solid.d146d6c3.svg",
+    "static/media/times-solid.svg": "/radency-task-2/static/media/times-solid.ea7c95d7.svg",
+    "static/media/trash-solid.svg": "/radency-task-2/static/media/trash-solid.8b6b7284.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3b512823.js",
+    "static/js/2.3f6c7030.chunk.js",
+    "static/css/main.b7133aad.chunk.css",
+    "static/js/main.e0bd7f8b.chunk.js"
+  ]
+}
