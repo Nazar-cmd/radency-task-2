@@ -42,3 +42,7 @@ jobs:
           user_email: 'nazar.vel@gmail.com'
           github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
           repository: ${{ github.repository }}
+
+      - name: Uninstall Yarn
+        if: always()
+        run: npm uninstall -g yarn
