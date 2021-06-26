@@ -2,10 +2,14 @@ import PropTypes from "prop-types";
 import { getAllDatesFromContent, getCategoryIconPath } from "utils";
 import { TableCell } from "components";
 import { useCallback } from "react";
-import { archiveNote, deleteNote } from "redux/actions/noteActions";
+import { archiveNote, updateNote, deleteNote } from "redux/actions/noteActions";
 import { useDispatch } from "react-redux";
+import NotePopup from "pages/startPage/NotesTable/NotePopup/NotePopup";
+import { usePopupOpen } from "hooks";
 
 const NotesTableRow = (props) => {
+	const { openPopup, closePopup, popupOpen } = usePopupOpen();
+
 	const { name, category, created, content, archived, index } = props;
 
 	const dates = getAllDatesFromContent(content);
@@ -15,6 +19,11 @@ const NotesTableRow = (props) => {
 	const archivedClassName = archived ? "archived" : "";
 
 	const dispatch = useDispatch();
+
+	const addNote = useCallback(
+		(note) => dispatch(updateNote(note, index)),
+		[dispatch, index]
+	);
 
 	const onArchiveClick = useCallback(
 		() => dispatch(archiveNote(index)),
@@ -28,6 +37,11 @@ const NotesTableRow = (props) => {
 
 	return (
 		<div className={`table__row_content table__row ${archivedClassName}`}>
+			<NotePopup
+				closePopup={closePopup}
+				open={popupOpen}
+				submitPopup={addNote}
+			/>
 			<TableCell>
 				<div className="table__cell_content table__cell_name">
 					<img
@@ -64,6 +78,7 @@ const NotesTableRow = (props) => {
 						src="assets/icons/pen-solid.svg"
 						className="icon table__row_icon icon_archive"
 						alt="edit"
+						onClick={openPopup}
 					/>
 					<img
 						src="assets/icons/archive-solid.svg"

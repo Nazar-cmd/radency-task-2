@@ -1,14 +1,15 @@
 import { Table, NoTableDataMessage, Button } from "components";
-import { useMemo, useState } from "react";
+import { useCallback, useMemo } from "react";
 import PropTypes from "prop-types";
 import NotePopup from "pages/startPage/NotesTable/NotePopup/NotePopup";
 import { useDispatch } from "react-redux";
 import { createNote } from "redux/actions/noteActions";
+import { usePopupOpen } from "hooks";
 import NotesTableHeader from "./NotesTableHeader";
 import NotesTableRow from "./NotesTableRow";
 
 const NotesTable = ({ notes }) => {
-	const [modalOpen, setModalOpen] = useState(false);
+	const { openPopup, closePopup, popupOpen } = usePopupOpen();
 	const dispatch = useDispatch();
 
 	const notesTableRows = useMemo(
@@ -28,10 +29,8 @@ const NotesTable = ({ notes }) => {
 	);
 
 	const noDataMessage = !notes.length && <NoTableDataMessage />;
-	const closePopup = () => setModalOpen(false);
-	const openPopup = () => setModalOpen(true);
 
-	const addNote = (note) => dispatch(createNote(note));
+	const addNote = useCallback((note) => dispatch(createNote(note)), [dispatch]);
 
 	return (
 		<div className="notes_table">
@@ -43,7 +42,7 @@ const NotesTable = ({ notes }) => {
 			<Button text="Add note!" onClick={openPopup} />
 			<NotePopup
 				closePopup={closePopup}
-				open={modalOpen}
+				open={popupOpen}
 				submitPopup={addNote}
 			/>
 		</div>

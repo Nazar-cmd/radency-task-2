@@ -61,6 +61,11 @@ const NotePopup = ({ open, closePopup, submitPopup }) => {
 };
 
 NotePopup.propTypes = {
+	initialValue: PropTypes.shape({
+		name: PropTypes.string,
+		category: PropTypes.string,
+		content: PropTypes.string
+	}),
 	open: PropTypes.bool.isRequired,
 	closePopup: PropTypes.func.isRequired,
 	submitPopup: PropTypes.func
