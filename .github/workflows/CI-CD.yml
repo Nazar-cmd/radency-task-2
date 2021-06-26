@@ -30,11 +30,6 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      - name: Build
-        run: yarn build
-        env:
-          CI: false
-
       - name: Deploy
         run: |
           git config --global user.name $user_name
@@ -42,6 +37,7 @@ jobs:
           git remote set-url origin https://${github_token}@github.com/${repository}
           npm run deploy
         env:
+          CI: false
           user_name: 'Nazar Velychko'
           user_email: 'nazar.vel@gmail.com'
           github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
