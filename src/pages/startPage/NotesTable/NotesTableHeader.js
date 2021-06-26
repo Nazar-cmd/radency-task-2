@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import { TableCell } from "components";
 import { useCallback } from "react";
 import { archiveAllNotes, deleteAllNotes } from "redux/actions/noteActions";
+import sdf from "assert";
 
 const NotesTableHeader = () => {
 	const dispatch = useDispatch();
@@ -26,13 +27,13 @@ const NotesTableHeader = () => {
 			<TableCell>
 				<div className="table__cell_content table__header_content">
 					<img
-						src="/assets/icons/archive-solid.svg"
+						src={require("../../../icons/archive-solid.svg").default}
 						className="icon table__header_icon icon_archive_all"
 						alt="archive"
 						onClick={onArchiveAllClick}
 					/>
 					<img
-						src="/assets/icons/trash-solid.svg"
+						src={require("../../../icons/trash-solid.svg").default}
 						className="icon table__header_icon icon_delete_all"
 						alt="delete"
 						onClick={onDeleteAllClick}

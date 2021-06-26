@@ -21,6 +21,7 @@ module.exports = {
 	rules: {
 		"no-console": 1,
 		"no-unused-vars": 1,
+		"global-require": 0,
 		"react/forbid-prop-types": 0,
 		"react/require-default-props": 0,
 		"react/jsx-filename-extension": 0,
@@ -31,6 +32,7 @@ module.exports = {
 		"jsx-a11y/control-has-associated-label": 1,
 		// "import/no-named-as-default": 2,
 		// "import/named": 0,
+		"import/no-dynamic-require": 0,
 		"no-return-await": 2,
 		"react-hooks/rules-of-hooks": "error",
 		"react-hooks/exhaustive-deps": "warn",

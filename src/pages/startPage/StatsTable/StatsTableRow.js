@@ -1,15 +1,15 @@
 import PropTypes from "prop-types";
-import { getCategoryIconPath } from "utils";
+import { getCategoryIconName } from "utils";
 
 const StatsTableRow = ({ category, activeQuantity, archivedQuantity }) => {
-	const categoryIconPath = getCategoryIconPath(category);
+	const categoryIconName = getCategoryIconName(category);
 
 	return (
 		<div className="table__row_content table__row">
 			<div className="table__cell">
 				<div className="table__cell_content table__cell_name">
 					<img
-						src={categoryIconPath}
+						src={require(`../../../icons/${categoryIconName}`).default}
 						className="icon table__row_icon"
 						alt="idea"
 					/>

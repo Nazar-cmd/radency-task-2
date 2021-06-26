@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { getAllDatesFromContent, getCategoryIconPath } from "utils";
+import { getAllDatesFromContent, getCategoryIconName } from "utils";
 import { TableCell } from "components";
 import { useCallback } from "react";
 import { archiveNote, updateNote, deleteNote } from "redux/actions/noteActions";
@@ -14,7 +14,7 @@ const NotesTableRow = (props) => {
 
 	const dates = getAllDatesFromContent(content);
 
-	const categoryIconPath = getCategoryIconPath(category);
+	const categoryIconName = getCategoryIconName(category);
 
 	const archivedClassName = archived ? "archived" : "";
 
@@ -52,7 +52,7 @@ const NotesTableRow = (props) => {
 			<TableCell>
 				<div className="table__cell_content table__cell_name">
 					<img
-						src={categoryIconPath}
+						src={require(`../../../icons/${categoryIconName}`).default}
 						className="icon table__row_icon"
 						alt="category_icon"
 					/>
@@ -82,19 +82,19 @@ const NotesTableRow = (props) => {
 			<TableCell>
 				<div className="table__cell_content table__header_content">
 					<img
-						src="assets/icons/pen-solid.svg"
+						src={require("../../../icons/pen-solid.svg").default}
 						className="icon table__row_icon icon_archive"
 						alt="edit"
 						onClick={openPopup}
 					/>
 					<img
-						src="assets/icons/archive-solid.svg"
+						src={require("../../../icons/archive-solid.svg").default}
 						className="icon table__row_icon icon_archive"
 						alt="archive"
 						onClick={onArchiveClick}
 					/>
 					<img
-						src="assets/icons/trash-solid.svg"
+						src={require("../../../icons/trash-solid.svg").default}
 						className="icon table__row_icon icon_delete"
 						alt="delete"
 						onClick={onDeleteClick}
