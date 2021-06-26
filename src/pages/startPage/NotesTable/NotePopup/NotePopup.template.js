@@ -2,12 +2,8 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import { getCurrentDate } from "utils";
 
-const NotePopupTemplate = ({ onClose, submitFunction }) => {
-	const [noteFields, setNoteFields] = useState({
-		name: "",
-		category: "",
-		content: ""
-	});
+const NotePopupTemplate = ({ onClose, submitFunction, initialValue }) => {
+	const [noteFields, setNoteFields] = useState(initialValue);
 
 	const handleInputChange = (e) => {
 		const { name, value } = e.target;
@@ -109,8 +105,21 @@ const NotePopupTemplate = ({ onClose, submitFunction }) => {
 };
 
 NotePopupTemplate.propTypes = {
+	initialValue: PropTypes.shape({
+		name: PropTypes.string,
+		category: PropTypes.string,
+		content: PropTypes.string
+	}),
 	submitFunction: PropTypes.func,
 	onClose: PropTypes.func.isRequired
+};
+
+NotePopupTemplate.defaultProps = {
+	initialValue: {
+		name: "",
+		category: "",
+		content: ""
+	}
 };
 
 export default NotePopupTemplate;

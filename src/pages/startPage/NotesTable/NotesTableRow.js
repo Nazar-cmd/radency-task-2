@@ -35,12 +35,19 @@ const NotesTableRow = (props) => {
 		[dispatch, index]
 	);
 
+	const popupInitialValue = {
+		name,
+		category,
+		content
+	};
+
 	return (
 		<div className={`table__row_content table__row ${archivedClassName}`}>
 			<NotePopup
 				closePopup={closePopup}
 				open={popupOpen}
 				submitPopup={addNote}
+				initialValue={popupInitialValue}
 			/>
 			<TableCell>
 				<div className="table__cell_content table__cell_name">

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Portal from "components/Portal";
 import NotePopupTemplate from "./NotePopup.template";
 
-const NotePopup = ({ open, closePopup, submitPopup }) => {
+const NotePopup = ({ open, closePopup, submitPopup, initialValue }) => {
 	const [active, setActive] = React.useState(false);
 	const backdrop = React.useRef(null);
 
@@ -52,6 +52,7 @@ const NotePopup = ({ open, closePopup, submitPopup }) => {
 						<NotePopupTemplate
 							onClose={closePopup}
 							submitFunction={submitPopup}
+							initialValue={initialValue}
 						/>
 					</div>
 				</Portal>
